@@ -26,6 +26,7 @@
 		9A88F4F628AB660800921E41 /* LogInRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A88F4F528AB660800921E41 /* LogInRouter.swift */; };
 		9A88F4F828AB661500921E41 /* LogInEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A88F4F728AB661500921E41 /* LogInEntity.swift */; };
 		9A88F4FA28AB662000921E41 /* HomeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A88F4F928AB662000921E41 /* HomeService.swift */; };
+		9A88F4FC28AB68FC00921E41 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9A88F4FB28AB68FC00921E41 /* GoogleService-Info.plist */; };
 		EE052E6185896397FF8765A2 /* Pods_MovieApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03F9BA04DAFB80841B98FF58 /* Pods_MovieApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +54,7 @@
 		9A88F4F528AB660800921E41 /* LogInRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInRouter.swift; sourceTree = "<group>"; };
 		9A88F4F728AB661500921E41 /* LogInEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInEntity.swift; sourceTree = "<group>"; };
 		9A88F4F928AB662000921E41 /* HomeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeService.swift; sourceTree = "<group>"; };
+		9A88F4FB28AB68FC00921E41 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B7D9AB4F718F3A45F04CDCF6 /* Pods-MovieApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieApp.release.xcconfig"; path = "Target Support Files/Pods-MovieApp/Pods-MovieApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -104,6 +106,7 @@
 				9A88F4CC28AB60BA00921E41 /* Assets.xcassets */,
 				9A88F4CE28AB60BA00921E41 /* LaunchScreen.storyboard */,
 				9A88F4D128AB60BA00921E41 /* Info.plist */,
+				9A88F4FB28AB68FC00921E41 /* GoogleService-Info.plist */,
 			);
 			path = MovieApp;
 			sourceTree = "<group>";
@@ -224,6 +227,7 @@
 			files = (
 				9A88F4EE28AB65A900921E41 /* LogInViewController.xib in Resources */,
 				9A88F4D028AB60BA00921E41 /* LaunchScreen.storyboard in Resources */,
+				9A88F4FC28AB68FC00921E41 /* GoogleService-Info.plist in Resources */,
 				9A88F4CD28AB60BA00921E41 /* Assets.xcassets in Resources */,
 				9A88F4DF28AB638000921E41 /* HomeViewController.xib in Resources */,
 			);
