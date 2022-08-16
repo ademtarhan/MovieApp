@@ -12,6 +12,6 @@ class HomeRouter{
     public static var shared = HomeRouter()
     
     var home : HomeViewController{
-        HomeViewController(nibName: "HomeViewController", bundle: nil)
+        HomeViewControllerImpl(nibName: "HomeViewController", bundle: nil)
     }
 }

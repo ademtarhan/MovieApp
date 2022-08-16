@@ -146,13 +146,13 @@
 		9A88F4EA28AB655500921E41 /* LogIn */ = {
 			isa = PBXGroup;
 			children = (
+				9A88F4F728AB661500921E41 /* LogInEntity.swift */,
 				9A88F4F128AB65CF00921E41 /* LogInInteractor.swift */,
 				9A88F4EF28AB65BD00921E41 /* LogInPresenter.swift */,
+				9A88F4F528AB660800921E41 /* LogInRouter.swift */,
 				9A88F4F328AB65F700921E41 /* LogInService.swift */,
 				9A88F4EB28AB65A900921E41 /* LogInViewController.swift */,
 				9A88F4EC28AB65A900921E41 /* LogInViewController.xib */,
-				9A88F4F528AB660800921E41 /* LogInRouter.swift */,
-				9A88F4F728AB661500921E41 /* LogInEntity.swift */,
 			);
 			name = LogIn;
 			sourceTree = "<group>";

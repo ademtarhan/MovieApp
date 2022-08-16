@@ -7,7 +7,11 @@
 
 import UIKit
 
-class HomeViewController: UIViewController {
+protocol HomeViewController: AnyObject{
+    
+}
+
+class HomeViewControllerImpl: UIViewController, HomeViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,3 +31,5 @@ class HomeViewController: UIViewController {
     */
 
 }
+
+

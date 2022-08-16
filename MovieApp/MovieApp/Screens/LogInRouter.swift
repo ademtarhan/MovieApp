@@ -11,6 +11,14 @@ import Foundation
 class LogInRouter{
     public static var shared = LogInRouter()
     var logIn : LogInViewController{
-        LogInViewController(nibName: "LogInViewController", bundle: nil)
+        let view = LogInViewControllerImpl(nibName: "LogInViewController", bundle: nil)
+        let presenter : LogInPresenter = LogInPresenterImpl()
+        let interactor : LogInInteractor = LogInInteractorImpl()
+        //let router : LogInRouter = LogInRouter()
+        let service : LogInService = LogInServiceImpl()
+        view.presenter = presenter
+        presenter.interactor = interactor
+        interactor.service = service
+        return view
     }
 }

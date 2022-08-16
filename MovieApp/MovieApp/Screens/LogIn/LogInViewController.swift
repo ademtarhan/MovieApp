@@ -7,7 +7,17 @@
 
 import UIKit
 
-class LogInViewController: UIViewController {
+protocol LogInViewController: AnyObject {
+    var presenter: LogInPresenter? { get set }
+}
+
+class LogInViewControllerImpl: UIViewController, LogInViewController {
+    
+    @IBOutlet weak var emailTextField: UITextField!
+    
+    @IBOutlet weak var passwordTextField: UITextField!
+    
+    var presenter: LogInPresenter?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -15,15 +25,22 @@ class LogInViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    @IBAction func didTapLogIn(_ sender: Any) {
     }
-    */
+    
+    @IBAction func didTapSignIn(_ sender: Any) {
+    }
+    
+    
+}
 
+extension UIViewController {
+    func navigateToHome() {
+        DispatchQueue.main.async {
+            let homeVC = HomeViewControllerImpl(nibName: "HomeViewController", bundle: nil)
+            homeVC.modalPresentationStyle = .fullScreen
+            self.present(homeVC, animated: true, completion: nil)
+        }
+    }
 }
