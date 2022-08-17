@@ -19,6 +19,7 @@ class HomeInteractorImpl: HomeInteractor {
         service?.getMovies(at: page, { result in
             switch result {
             case let .success(movies):
+                print("\(movies)")
                 completionHandler(.success(movies))
             case let .failure(error):
                 completionHandler(.failure(MovieError.forwarded(error)))

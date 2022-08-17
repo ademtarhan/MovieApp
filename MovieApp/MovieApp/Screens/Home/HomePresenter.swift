@@ -11,6 +11,7 @@ import Foundation
 protocol HomePresenter: AnyObject{
     var interactor: HomeInteractor? {get set}
     var view: HomeViewController? {get set}
+    func setData()
 }
 
 
