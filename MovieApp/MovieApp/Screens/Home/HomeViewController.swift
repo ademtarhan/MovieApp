@@ -8,10 +8,13 @@
 import UIKit
 
 protocol HomeViewController: AnyObject{
-    
+    var presenter : HomePresenter? {get set}
+    func update(movies: [MovieResult])
+    func showErrorAlert()
 }
 
 class HomeViewControllerImpl: UIViewController, HomeViewController {
+    var presenter: HomePresenter?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,6 +22,15 @@ class HomeViewControllerImpl: UIViewController, HomeViewController {
         // Do any additional setup after loading the view.
     }
 
+    
+    func update(movies: [MovieResult]) {
+        //self.movies.append(contentsOf: movies)
+        
+        DispatchQueue.main.async {
+            //self.movies = movies
+           // self.collectionView.reloadData()
+        }
+    }
 
     /*
     // MARK: - Navigation
@@ -33,3 +45,8 @@ class HomeViewControllerImpl: UIViewController, HomeViewController {
 }
 
 
+extension HomeViewControllerImpl{
+    func showErrorAlert(){
+        
+    }
+}

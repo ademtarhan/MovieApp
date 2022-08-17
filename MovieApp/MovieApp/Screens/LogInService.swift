@@ -10,10 +10,12 @@ import Foundation
 
 protocol LogInService: AnyObject {
     func logIn(withEmail email: String, password: String, _ completionHandler: @escaping (Result<Any, LogInError>) -> Void)
-    func createAccount(withEmail email: String, password: String, _ completionHandler: @escaping (Result<LogInEntity.User, LogInError>) -> Void)
+    func createAccount(withEmail email: String, password: String, _ completionHandler: @escaping (Result<Any, LogInError>) -> Void)
 }
 
 class LogInServiceImpl: LogInService {
+    
+    
     func logIn(withEmail email: String, password: String, _ completionHandler: @escaping (Result<Any, LogInError>) -> Void) {
         Auth.auth().signIn(withEmail: email, password: password) { _, error in
             if let error = error {
@@ -26,16 +28,19 @@ class LogInServiceImpl: LogInService {
         }
     }
 
-    func createAccount(withEmail email: String, password: String, _ completionHandler: @escaping (Result<LogInEntity.User, LogInError>) -> Void) {
-        guard let currenUserID = Auth.auth().currentUser?.uid else { return }
-
-        Auth.auth().createUser(withEmail: email, password: password) { r, error in
+    func createAccount(withEmail email: String, password: String, _ completionHandler: @escaping (Result<Any, LogInError>) -> Void) {
+        
+        print("email\(email)-password\(password)")
+        
+        Auth.auth().createUser(withEmail: email, password: password) { _, error in
 
             if let error = error {
                 completionHandler(.failure(self.getAuthError(errCode: error._code)))
             } else {
-                let user = LogInEntity.User(user: r?.user)
-                completionHandler(.success(user))
+               // let user = LogInEntity.User(user: r?.user)
+                print("created user")
+                
+                completionHandler(.success(true))
             }
         }
     }

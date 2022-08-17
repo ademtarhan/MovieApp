@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LogInViewController" customModule="MovieApp" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LogInViewControllerImpl" customModule="MovieApp" customModuleProvider="target">
             <connections>
-                <outlet property="emailTextField" destination="q3K-KN-x8J" id="WnB-13-nwq"/>
-                <outlet property="passwordTextField" destination="E3I-Hz-O5d" id="gcv-Um-2Dn"/>
+                <outlet property="emailTextField" destination="q3K-KN-x8J" id="kUR-RN-vPN"/>
+                <outlet property="passwordTextField" destination="E3I-Hz-O5d" id="vHR-F9-asr"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -46,7 +46,7 @@
                     <state key="normal" title="Button"/>
                     <buttonConfiguration key="configuration" style="plain" title="Log In"/>
                     <connections>
-                        <action selector="didTapLogIn:" destination="-1" eventType="touchUpInside" id="wC3-so-mRP"/>
+                        <action selector="didTapLogIn:" destination="-1" eventType="touchUpInside" id="5PD-H8-jdt"/>
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Raw-KN-Bzy">
@@ -60,7 +60,7 @@
                     <state key="normal" title="Button"/>
                     <buttonConfiguration key="configuration" style="plain" title="Sign In"/>
                     <connections>
-                        <action selector="didTapSignIn:" destination="-1" eventType="touchUpInside" id="C79-a5-LFp"/>
+                        <action selector="didTapSignIn:" destination="-1" eventType="touchUpInside" id="bcV-ag-K0h"/>
                     </connections>
                 </button>
             </subviews>

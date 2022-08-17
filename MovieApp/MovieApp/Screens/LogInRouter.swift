@@ -17,6 +17,7 @@ class LogInRouter{
         //let router : LogInRouter = LogInRouter()
         let service : LogInService = LogInServiceImpl()
         view.presenter = presenter
+        presenter.view = view
         presenter.interactor = interactor
         interactor.service = service
         return view

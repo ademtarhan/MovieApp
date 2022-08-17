@@ -9,14 +9,14 @@ import UIKit
 
 protocol LogInViewController: AnyObject {
     var presenter: LogInPresenter? { get set }
+    func navigateToHome()
 }
 
 class LogInViewControllerImpl: UIViewController, LogInViewController {
-    
-    @IBOutlet weak var emailTextField: UITextField!
-    
-    @IBOutlet weak var passwordTextField: UITextField!
-    
+    @IBOutlet var emailTextField: UITextField!
+
+    @IBOutlet var passwordTextField: UITextField!
+
     var presenter: LogInPresenter?
 
     override func viewDidLoad() {
@@ -25,14 +25,19 @@ class LogInViewControllerImpl: UIViewController, LogInViewController {
         // Do any additional setup after loading the view.
     }
 
-    
     @IBAction func didTapLogIn(_ sender: Any) {
+        if ((emailTextField.text?.isEmpty) != nil) && ((passwordTextField.text?.isEmpty) != nil) {
+            presenter?.logIn(email: emailTextField.text!, password: passwordTextField.text!)
+        }
+        print("empty area error")
     }
-    
+
     @IBAction func didTapSignIn(_ sender: Any) {
+        //if ((emailTextField.text?.isEmpty) != nil) && ((passwordTextField.text?.isEmpty) != nil) {
+            presenter?.createAccount(withEmail: emailTextField.text!, password: passwordTextField.text!)
+        //}
+        //print("empty area error")
     }
-    
-    
 }
 
 extension UIViewController {

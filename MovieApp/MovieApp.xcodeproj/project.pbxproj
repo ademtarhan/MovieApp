@@ -27,6 +27,7 @@
 		9A88F4F828AB661500921E41 /* LogInEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A88F4F728AB661500921E41 /* LogInEntity.swift */; };
 		9A88F4FA28AB662000921E41 /* HomeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A88F4F928AB662000921E41 /* HomeService.swift */; };
 		9A88F4FC28AB68FC00921E41 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9A88F4FB28AB68FC00921E41 /* GoogleService-Info.plist */; };
+		9A96E04C28ACBB0800E46947 /* APICallable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A96E04B28ACBB0800E46947 /* APICallable.swift */; };
 		EE052E6185896397FF8765A2 /* Pods_MovieApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03F9BA04DAFB80841B98FF58 /* Pods_MovieApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -55,6 +56,7 @@
 		9A88F4F728AB661500921E41 /* LogInEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInEntity.swift; sourceTree = "<group>"; };
 		9A88F4F928AB662000921E41 /* HomeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeService.swift; sourceTree = "<group>"; };
 		9A88F4FB28AB68FC00921E41 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		9A96E04B28ACBB0800E46947 /* APICallable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICallable.swift; sourceTree = "<group>"; };
 		B7D9AB4F718F3A45F04CDCF6 /* Pods-MovieApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieApp.release.xcconfig"; path = "Target Support Files/Pods-MovieApp/Pods-MovieApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -116,6 +118,7 @@
 			children = (
 				9A88F4E628AB645A00921E41 /* ApiService.swift */,
 				9A88F4E828AB646700921E41 /* FirebaseService.swift */,
+				9A96E04B28ACBB0800E46947 /* APICallable.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -288,6 +291,7 @@
 				9A88F4F028AB65BD00921E41 /* LogInPresenter.swift in Sources */,
 				9A88F4ED28AB65A900921E41 /* LogInViewController.swift in Sources */,
 				9A88F4F628AB660800921E41 /* LogInRouter.swift in Sources */,
+				9A96E04C28ACBB0800E46947 /* APICallable.swift in Sources */,
 				9A88F4E928AB646700921E41 /* FirebaseService.swift in Sources */,
 				9A88F4F228AB65CF00921E41 /* LogInInteractor.swift in Sources */,
 				9A88F4DB28AB62F900921E41 /* HomeRouter.swift in Sources */,
