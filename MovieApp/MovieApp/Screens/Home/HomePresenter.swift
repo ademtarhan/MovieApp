@@ -7,29 +7,41 @@
 
 import Foundation
 
-
-protocol HomePresenter: AnyObject{
-    var interactor: HomeInteractor? {get set}
-    var view: HomeViewController? {get set}
+protocol HomePresenter: AnyObject {
+    var interactor: HomeInteractor? { get set }
+    var view: HomeViewController? { get set }
     func setData()
 }
 
-
-class HomePresenterImpl: HomePresenter{
+class HomePresenterImpl: HomePresenter {
     var interactor: HomeInteractor?
     var view: HomeViewController?
     private var page = 0
-    
-    func setData(){
+    var moviesArray = [MovieResult]()
+
+    func setData() {
         page += 1
-        interactor?.getMovies(at: page, { result in
-            switch result{
+        interactor?.getMovies(at: page, { [self] result in
+            switch result {
             case let .success(movies):
-                self.view?.update(movies: movies)
+                print("page: \(page) movies: \(movies.count)")
+                //  print("movies count: \(moviesArray.count)")
+                // if moviesArray.count < 10 {
+
+                for i in 0 ... movies.count - 1 {
+                    //        print("i: \(i)")
+                    moviesArray.append(movies[i])
+//                    print("moviesArrayCount: \(moviesArray.count)")
+
+                    let sortedArray = moviesArray.sorted { $0.voteAverage > $1.voteAverage }
+                    self.view?.update(movies: sortedArray)
+                }
+
+                print("moviesArrayCount: \(moviesArray.count)")
+
             case .failure:
                 self.view?.showErrorAlert()
             }
         })
     }
-    
 }

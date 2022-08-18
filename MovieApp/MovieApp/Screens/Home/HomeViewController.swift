@@ -9,6 +9,7 @@ import UIKit
 
 protocol HomeViewController: AnyObject {
     var presenter: HomePresenter? { get set }
+    var movies : [MovieResult] {get}
     func update(movies: [MovieResult])
     func showErrorAlert()
 }
@@ -17,6 +18,7 @@ class HomeViewControllerImpl: UIViewController, HomeViewController, UICollection
     var movie: MovieResult?
     var movies = [MovieResult]()
     var presenter: HomePresenter?
+    
     @IBOutlet var collectionView: UICollectionView!
 
     override func viewDidLoad() {
@@ -44,16 +46,6 @@ class HomeViewControllerImpl: UIViewController, HomeViewController, UICollection
             self.collectionView.reloadData()
         }
     }
-
-    /*
-     // MARK: - Navigation
-
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-         // Get the new view controller using segue.destination.
-         // Pass the selected object to the new view controller.
-     }
-     */
 }
 
 extension HomeViewControllerImpl {

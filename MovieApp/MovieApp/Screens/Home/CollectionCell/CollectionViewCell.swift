@@ -22,7 +22,7 @@ class CollectionViewCell: UICollectionViewCell,APICallable {
     func setup(_ movie: MovieResult) {
         var url = URL(string: "\(imageBaseURL)\(movie.posterPath)")!
         movieNameLabel.text = movie.title
-        loadImage(url: url)
+        loadImage(url: url) 
         movieVoteLabel.text = String(movie.voteAverage)
     }
 
@@ -31,7 +31,7 @@ class CollectionViewCell: UICollectionViewCell,APICallable {
             if let data = try? Data(contentsOf: url) {
                 if let image = UIImage(data: data) {
                     DispatchQueue.main.async {
-                        self!.movieImage.image = image
+                        self?.movieImage.image = image 
                     }
                 }
             }
