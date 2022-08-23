@@ -1,54 +1,70 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Bucket
-   uuid = "FFF9C5DD-3A20-4A99-9889-3F76342307DD"
+   uuid = "2249D05C-75D6-4C9E-96DF-CB91FD579D20"
    type = "0"
    version = "2.0">
    <Breakpoints>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "74774A8C-DA86-4175-8FB5-53FEA50A2EE0"
-            shouldBeEnabled = "No"
+            uuid = "8E5CA3EA-99D1-49D5-A72F-3F07E8000102"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "MovieApp/Screens/Home/HomeService.swift"
+            filePath = "MovieApp/Common/CoreData.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "20"
-            endingLineNumber = "20"
-            landmarkName = "getMovies(at:_:)"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "deleteObjectFromCoreData(context:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "38EDC3E7-F988-4F4D-ADB0-CDD6B29FA14B"
-            shouldBeEnabled = "No"
+            uuid = "D29BEF0C-0978-4B00-9C76-FAE13C1268BA"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "MovieApp/Screens/Home/HomeService.swift"
+            filePath = "MovieApp/Common/CoreData.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "17"
-            endingLineNumber = "17"
-            landmarkName = "getMovies(at:_:)"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
+            landmarkName = "saveDataInCoreData(movies:context:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "1E518423-16BD-49CC-AE52-4E056AF91796"
-            shouldBeEnabled = "No"
+            uuid = "5FD77BAF-5FFB-4E10-9AFF-48A156DACB8B"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "MovieApp/Screens/Home/HomePresenter.swift"
+            filePath = "MovieApp/Common/CoreData.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "28"
-            endingLineNumber = "28"
-            landmarkName = "setData()"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
+            landmarkName = "saveDataOf(movie:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "53DEB7E9-D4AA-4636-B919-5620E06022FF"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MovieApp/Common/CoreData.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
+            landmarkName = "saveDataOf(movie:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

@@ -7,7 +7,8 @@
 
 import UIKit
 import FirebaseCore
-@main
+import CoreData
+ @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
@@ -40,4 +41,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let root = UINavigationController(rootViewController: home as! UIViewController)
         rootViewController = root
     }
+    
+    
+    lazy var persistentContainer: NSPersistentContainer = {
+            let container = NSPersistentContainer(name: "DataModel")
+            container.loadPersistentStores { description, error in
+                if let error = error {
+                    fatalError("Unable to load persistent stores: \(error)")
+                }
+            }
+            return container
+        }()
+    
+    
+    
+    
 }

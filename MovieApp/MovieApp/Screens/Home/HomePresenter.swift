@@ -24,6 +24,21 @@ class HomePresenterImpl: HomePresenter {
         interactor?.getMovies(at: page, { [self] result in
             switch result {
             case let .success(movies):
+
+                let sortedArray = movies.sorted { $0.voteAverage > $1.voteAverage }
+                self.view?.update(movies: sortedArray)
+
+            case .failure:
+                self.view?.showErrorAlert()
+            }
+        })
+    }
+
+    func setDataForLowAverage() {
+        page += 1
+        interactor?.getMovies(at: page, { [self] result in
+            switch result {
+            case let .success(movies):
                 print("page: \(page) movies: \(movies.count)")
                 //  print("movies count: \(moviesArray.count)")
                 // if moviesArray.count < 10 {
@@ -33,8 +48,9 @@ class HomePresenterImpl: HomePresenter {
                     moviesArray.append(movies[i])
 //                    print("moviesArrayCount: \(moviesArray.count)")
 
-                    let sortedArray = moviesArray.sorted { $0.voteAverage > $1.voteAverage }
-                    self.view?.update(movies: sortedArray)
+                    let sortedArray = moviesArray.sorted { $0.voteAverage < $1.voteAverage }
+                    // self.view?.update(movies: sortedArray)
+                    // self.view?.didTapLowAverage()
                 }
 
                 print("moviesArrayCount: \(moviesArray.count)")

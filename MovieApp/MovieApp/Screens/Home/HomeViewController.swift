@@ -6,19 +6,23 @@
 //
 
 import UIKit
+import FirebaseCrashlytics
 
 protocol HomeViewController: AnyObject {
     var presenter: HomePresenter? { get set }
-    var movies : [MovieResult] {get}
+    var movies: [MovieResult] { get }
+    var coreData: CoreData? {get set}
     func update(movies: [MovieResult])
     func showErrorAlert()
-}
+
+    func didTapHighAverage(_ sender: Any)}
 
 class HomeViewControllerImpl: UIViewController, HomeViewController, UICollectionViewDataSource {
     var movie: MovieResult?
     var movies = [MovieResult]()
     var presenter: HomePresenter?
-    
+    var coreData: CoreData?
+
     @IBOutlet var collectionView: UICollectionView!
 
     override func viewDidLoad() {
@@ -30,13 +34,31 @@ class HomeViewControllerImpl: UIViewController, HomeViewController, UICollection
         let nibCell = UINib(nibName: "CollectionViewCell", bundle: nil)
         collectionView.register(nibCell, forCellWithReuseIdentifier: "cell")
         presenter?.setData()
-        
-        navigationItem.title = "MOVIES"
-        
-        
-        
-        
+
+        // navigationItem.title = "MOVIES"
+//        let highAverage = UIBarButtonItem(title: "High Average", style: .plain, target: self, action: #selector(didTapHighAverage))
+//        let lowAverage = UIBarButtonItem(title: "Low Average", style: .plain, target: self, action: #selector(didTapLowAverage))
+//        lowAverage.tintColor = UIColor(named: "foreGroundColor")
+//        highAverage.tintColor = UIColor(named: "foreGroundColor")
+//        navigationItem.rightBarButtonItem = lowAverage
+//        navigationItem.leftBarButtonItem = highAverage
+//
     }
+
+    @IBAction func didTapHighAverage(_ sender: Any) {
+        print("did tap high")
+        DispatchQueue.main.async {
+            self.collectionView.reloadData()
+        }
+    }
+
+//    @objc func didTapHighAverage(){
+//        update(movies: movies)
+//    }
+//
+//    @objc func didTapLowAverage(){
+//        update(movies: movies)
+//    }
 
     func update(movies: [MovieResult]) {
         // self.movies.append(contentsOf: movies)
@@ -44,6 +66,8 @@ class HomeViewControllerImpl: UIViewController, HomeViewController, UICollection
         DispatchQueue.main.async {
             self.movies = movies
             self.collectionView.reloadData()
+            self.coreData?.saveDataOf(movie: movies)
+
         }
     }
 }
