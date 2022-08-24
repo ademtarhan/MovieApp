@@ -8,21 +8,19 @@
 import CoreData
 import UIKit
 
-
-protocol CoreData: AnyObject{
+protocol CoreData: AnyObject {
     func saveDataOf(movie: [MovieResult])
 }
 
 class CoreDataImpl: CoreData {
-    
-    
     private let container: NSPersistentContainer? = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer
     private let fetchRequest = NSFetchRequest<MovieEntity>(entityName: "MovieEntity")
-
+   
+    
     func saveDataOf(movie: [MovieResult]) {
         container?.performBackgroundTask({ [self] context in
-            self.deleteObjectFromCoreData(context: context)
-            self.saveDataInCoreData(movies: movie, context: context)
+            deleteObjectFromCoreData(context: context)
+            saveDataInCoreData(movies: movie, context: context)
         })
     }
 

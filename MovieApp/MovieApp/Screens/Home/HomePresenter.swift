@@ -11,6 +11,8 @@ protocol HomePresenter: AnyObject {
     var interactor: HomeInteractor? { get set }
     var view: HomeViewController? { get set }
     func setData()
+    func setDataForHighAverage()
+    func setDataForLowAverage()
 }
 
 class HomePresenterImpl: HomePresenter {
@@ -24,10 +26,12 @@ class HomePresenterImpl: HomePresenter {
         interactor?.getMovies(at: page, { [self] result in
             switch result {
             case let .success(movies):
-
-                let sortedArray = movies.sorted { $0.voteAverage > $1.voteAverage }
-                self.view?.update(movies: sortedArray)
-
+                if moviesArray.count < 49 {
+                    movies.forEach { movie in
+                        moviesArray.append(movie)
+                    }
+                }
+                self.view?.update(movies: moviesArray)
             case .failure:
                 self.view?.showErrorAlert()
             }
@@ -39,22 +43,31 @@ class HomePresenterImpl: HomePresenter {
         interactor?.getMovies(at: page, { [self] result in
             switch result {
             case let .success(movies):
-                print("page: \(page) movies: \(movies.count)")
-                //  print("movies count: \(moviesArray.count)")
-                // if moviesArray.count < 10 {
-
-                for i in 0 ... movies.count - 1 {
-                    //        print("i: \(i)")
-                    moviesArray.append(movies[i])
-//                    print("moviesArrayCount: \(moviesArray.count)")
-
-                    let sortedArray = moviesArray.sorted { $0.voteAverage < $1.voteAverage }
-                    // self.view?.update(movies: sortedArray)
-                    // self.view?.didTapLowAverage()
+                if moviesArray.count < 49 {
+                    movies.forEach { movie in
+                        moviesArray.append(movie)
+                    }
                 }
+                let sortedArray = moviesArray.sorted { $0.voteAverage < $1.voteAverage }
+                self.view?.update(movies: sortedArray)
+            case .failure:
+                self.view?.showErrorAlert()
+            }
+        })
+    }
 
-                print("moviesArrayCount: \(moviesArray.count)")
-
+    func setDataForHighAverage() {
+        page += 1
+        interactor?.getMovies(at: page, { [self] result in
+            switch result {
+            case let .success(movies):
+                if moviesArray.count < 49 {
+                    movies.forEach { movie in
+                        moviesArray.append(movie)
+                    }
+                }
+                let sortedArray = moviesArray.sorted { $0.voteAverage > $1.voteAverage }
+                self.view?.update(movies: sortedArray)
             case .failure:
                 self.view?.showErrorAlert()
             }
