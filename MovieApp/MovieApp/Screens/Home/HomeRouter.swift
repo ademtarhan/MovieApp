@@ -16,13 +16,14 @@ class HomeRouter{
         let presenter : HomePresenter = HomePresenterImpl()
         let interactor : HomeInteractor = HomeInteractorImpl()
         let service : HomeService = HomeServiceImpl()
-        let coreData : CoreData = CoreDataImpl()
+        let localStorageService : LocalStorageService = LocalStorageServiceImpl()
         
         view.presenter = presenter
         presenter.interactor = interactor
         presenter.view = view
         interactor.service = service
-        view.coreData = coreData
+        view.localStorageService = localStorageService
+        localStorageService.view = view
         return view
     }
 }

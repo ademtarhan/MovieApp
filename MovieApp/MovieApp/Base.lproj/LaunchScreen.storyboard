@@ -15,50 +15,48 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MOVIE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OfF-VA-uSZ">
-                                <rect key="frame" x="40" y="373" width="333" height="150"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="150" id="YQI-X5-Du8"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Cochin" family="Cochin" pointSize="93"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="APP" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eXN-uo-weG">
-                                <rect key="frame" x="158" y="494" width="130" height="60"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="130" id="3UY-Sx-cbG"/>
-                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="60" id="dUv-Rd-Eic"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="hNE-GP-uty"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Cochin" family="Cochin" pointSize="50"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="loading.." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R1d-gH-y2G">
-                                <rect key="frame" x="165.5" y="756" width="82" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="82" id="dhd-7b-BQf"/>
-                                    <constraint firstAttribute="height" constant="30" id="sjS-Fx-C0m"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Cochin" family="Cochin" pointSize="23"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="100" translatesAutoresizingMaskIntoConstraints="NO" id="QeH-SQ-dBj">
+                                <rect key="frame" x="69.5" y="304" width="275.5" height="288.5"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="5cm-P6-Vkg">
+                                        <rect key="frame" x="0.0" y="0.0" width="275.5" height="158.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MOVIE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OfF-VA-uSZ">
+                                                <rect key="frame" x="0.0" y="0.0" width="275.5" height="88.5"/>
+                                                <fontDescription key="fontDescription" name="Cochin" family="Cochin" pointSize="77"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="APP" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eXN-uo-weG">
+                                                <rect key="frame" x="72.5" y="98.5" width="130" height="60"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="60" id="Gm6-Zk-qZl"/>
+                                                    <constraint firstAttribute="width" constant="130" id="QY0-ey-Nqk"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="Cochin" family="Cochin" pointSize="50"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="loading.." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R1d-gH-y2G">
+                                        <rect key="frame" x="96.5" y="258.5" width="82" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="YuX-DJ-5vv"/>
+                                            <constraint firstAttribute="width" constant="82" id="f3X-Es-7Fw"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Cochin" family="Cochin" pointSize="23"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.98039215690000003" green="0.97254901959999995" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="R1d-gH-y2G" secondAttribute="bottom" constant="76" id="1Q7-Ur-wUF"/>
-                            <constraint firstItem="R1d-gH-y2G" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="165.5" id="5hH-pI-WnS"/>
-                            <constraint firstItem="OfF-VA-uSZ" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="9zV-WO-AQj"/>
-                            <constraint firstItem="eXN-uo-weG" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="450" id="Ad0-Vs-mKE"/>
-                            <constraint firstItem="eXN-uo-weG" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="R9j-hQ-dff"/>
-                            <constraint firstItem="eXN-uo-weG" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="158" id="ZO1-tS-p4D"/>
-                            <constraint firstItem="OfF-VA-uSZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="bYB-qP-AWu"/>
-                            <constraint firstItem="R1d-gH-y2G" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="d86-vM-Jo0"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="OfF-VA-uSZ" secondAttribute="trailing" constant="40" id="hHX-YR-wBk"/>
-                            <constraint firstItem="OfF-VA-uSZ" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="yAa-G2-Z5C"/>
+                            <constraint firstItem="QeH-SQ-dBj" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="U5X-ba-LAG"/>
+                            <constraint firstItem="QeH-SQ-dBj" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="kp1-KF-Sqq"/>
                         </constraints>
                     </view>
                 </viewController>

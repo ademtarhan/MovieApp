@@ -5,6 +5,8 @@
 //  Created by Adem Tarhan on 17.08.2022.
 //
 
+import Alamofire
+import Kingfisher
 import UIKit
 
 class CollectionViewCell: UICollectionViewCell, APICallable {
@@ -14,8 +16,7 @@ class CollectionViewCell: UICollectionViewCell, APICallable {
 
     @IBOutlet var movieNameLabel: UILabel!
 
-    private let cache = NSCache<NSNumber, UIImage>()
-    private let utilityQueue = DispatchQueue.global(qos: .utility)
+    var imageCache = NSCache<AnyObject, AnyObject>()
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -23,35 +24,41 @@ class CollectionViewCell: UICollectionViewCell, APICallable {
     }
 
     func setup(itemNumber: NSNumber, _ movie: MovieResult) {
-        let url = URL(string: "\(imageBaseURL)\(movie.posterPath)")!
+        let imageURL = "\(imageBaseURL)\(movie.posterPath)"
 
         movieNameLabel.text = movie.title
         movieVoteLabel.text = String(movie.voteAverage)
 
-        loadImage(with: url) { image in
-            guard let image = image else { return}
-
-            self.cache.setObject(image, forKey: itemNumber)
-            self.movieImage.image = image
-        }
+        getImage(for: imageURL)
     }
 
-    func loadImage(with url: URL, completionHandler: @escaping (UIImage?) -> Void) {
-        utilityQueue.async {
-            guard let data = try? Data(contentsOf: url) else { return }
-            let imageToCache = UIImage(data: data)
-            DispatchQueue.main.async {
-                completionHandler(imageToCache)
+    // MARK: NSCache
+
+    func getImage(for url: String?) {
+        guard let url = url else {
+            return
+        }
+        let key = url as NSString
+
+        if let image = imageCache.object(forKey: key) {
+            guard let image = image as? UIImage else {
+                return
+            }
+            movieImage.image = image
+        } else {
+            AF.request(url, method: .get).response { response in
+                switch response.result {
+                case let .success(responseData):
+                    let image = UIImage(data: responseData!, scale: 1)
+                    guard let im = image else {
+                        return
+                    }
+                    self.movieImage.image = image
+                    self.imageCache.setObject(im, forKey: key)
+                case let .failure(error):
+                    print("error--->", error)
+                }
             }
         }
-//        DispatchQueue.global().async { [weak self] in
-//            if let data = try? Data(contentsOf: url) {
-//                if let image = UIImage(data: data) {
-//                    DispatchQueue.main.async {
-//                        self?.movieImage.image = image
-//                    }
-//                }
-//            }
-//        }
     }
 }

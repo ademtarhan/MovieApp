@@ -8,4 +8,6 @@ target 'MovieApp' do
   # Pods for MovieApp
 pod 'FirebaseAuth'
 pod 'FirebaseCrashlytics'
+pod 'Alamofire'
+pod 'Kingfisher'
 end

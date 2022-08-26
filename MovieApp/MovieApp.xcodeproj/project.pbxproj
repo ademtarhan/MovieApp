@@ -9,7 +9,9 @@
 /* Begin PBXBuildFile section */
 		3D70FFBA2B0E26B6A360D186 /* Pods_MovieApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA6360ECEED3D0A48268C636 /* Pods_MovieApp.framework */; };
 		9A27741528B4F53200A18B30 /* MovieModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9A27741328B4F53200A18B30 /* MovieModel.xcdatamodeld */; };
-		9A27741728B4F59E00A18B30 /* CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A27741628B4F59E00A18B30 /* CoreData.swift */; };
+		9A27741728B4F59E00A18B30 /* LocalStorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A27741628B4F59E00A18B30 /* LocalStorageService.swift */; };
+		9A4CECD028B89880001F2C0B /* MovieEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4CECCE28B89880001F2C0B /* MovieEntity+CoreDataClass.swift */; };
+		9A4CECD128B89880001F2C0B /* MovieEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4CECCF28B89880001F2C0B /* MovieEntity+CoreDataProperties.swift */; };
 		9A5074C928B39D1000F61486 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9A5074C828B39D1000F61486 /* GoogleService-Info.plist */; };
 		9A88F4C428AB60B600921E41 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A88F4C328AB60B600921E41 /* AppDelegate.swift */; };
 		9A88F4CD28AB60BA00921E41 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A88F4CC28AB60BA00921E41 /* Assets.xcassets */; };
@@ -40,7 +42,9 @@
 		42A4AAED96862B7E3AEFD573 /* Pods-MovieApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieApp.debug.xcconfig"; path = "Target Support Files/Pods-MovieApp/Pods-MovieApp.debug.xcconfig"; sourceTree = "<group>"; };
 		8388FC5EB2B8282C5B59A8ED /* Pods-MovieApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieApp.release.xcconfig"; path = "Target Support Files/Pods-MovieApp/Pods-MovieApp.release.xcconfig"; sourceTree = "<group>"; };
 		9A27741428B4F53200A18B30 /* MovieModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MovieModel.xcdatamodel; sourceTree = "<group>"; };
-		9A27741628B4F59E00A18B30 /* CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreData.swift; sourceTree = "<group>"; };
+		9A27741628B4F59E00A18B30 /* LocalStorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStorageService.swift; sourceTree = "<group>"; };
+		9A4CECCE28B89880001F2C0B /* MovieEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MovieEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		9A4CECCF28B89880001F2C0B /* MovieEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MovieEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		9A5074C828B39D1000F61486 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9A88F4C028AB60B600921E41 /* MovieApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A88F4C328AB60B600921E41 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -99,6 +103,15 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		9A4CECD228B89891001F2C0B /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				9A4CECCE28B89880001F2C0B /* MovieEntity+CoreDataClass.swift */,
+				9A4CECCF28B89880001F2C0B /* MovieEntity+CoreDataProperties.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
 		9A88F4B728AB60B600921E41 = {
 			isa = PBXGroup;
 			children = (
@@ -136,10 +149,11 @@
 		9A88F4D728AB628400921E41 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				9A4CECD228B89891001F2C0B /* CoreData */,
 				9A88F4E628AB645A00921E41 /* ApiService.swift */,
 				9A88F4E828AB646700921E41 /* FirebaseService.swift */,
 				9A96E04B28ACBB0800E46947 /* APICallable.swift */,
-				9A27741628B4F59E00A18B30 /* CoreData.swift */,
+				9A27741628B4F59E00A18B30 /* LocalStorageService.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -343,10 +357,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				9A88F4F828AB661500921E41 /* LogInEntity.swift in Sources */,
+				9A4CECD128B89880001F2C0B /* MovieEntity+CoreDataProperties.swift in Sources */,
 				9A88F4C428AB60B600921E41 /* AppDelegate.swift in Sources */,
 				9A96E05028ACC5D500E46947 /* CollectionViewCell.swift in Sources */,
 				9A88F4E528AB63D300921E41 /* HomeEntity.swift in Sources */,
-				9A27741728B4F59E00A18B30 /* CoreData.swift in Sources */,
+				9A27741728B4F59E00A18B30 /* LocalStorageService.swift in Sources */,
 				9A88F4F028AB65BD00921E41 /* LogInPresenter.swift in Sources */,
 				9A88F4ED28AB65A900921E41 /* LogInViewController.swift in Sources */,
 				9A88F4F628AB660800921E41 /* LogInRouter.swift in Sources */,
@@ -361,6 +376,7 @@
 				9A88F4E328AB63BC00921E41 /* HomeInteractor.swift in Sources */,
 				9A88F4E728AB645A00921E41 /* ApiService.swift in Sources */,
 				9A88F4E128AB63B000921E41 /* HomePresenter.swift in Sources */,
+				9A4CECD028B89880001F2C0B /* MovieEntity+CoreDataClass.swift in Sources */,
 				9A88F4F428AB65F700921E41 /* LogInService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -515,7 +531,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = ademtarhan.movieApp;
+				PRODUCT_BUNDLE_IDENTIFIER = "ademtarhan.movieApp-2";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -545,7 +561,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = ademtarhan.movieApp;
+				PRODUCT_BUNDLE_IDENTIFIER = "ademtarhan.movieApp-2";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;

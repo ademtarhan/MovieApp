@@ -11,17 +11,16 @@ import UIKit
 protocol HomeViewController: AnyObject {
     var presenter: HomePresenter? { get set }
     var movies: [MovieResult] { get }
-    var coreData: CoreData? { get set }
+    var localStorageService: LocalStorageService? { get set }
     func update(movies: [MovieResult])
     func showErrorAlert()
-
 }
 
 class HomeViewControllerImpl: UIViewController, HomeViewController, UICollectionViewDataSource {
     var movie: MovieResult?
     var movies = [MovieResult]()
     var presenter: HomePresenter?
-    var coreData: CoreData?
+    var localStorageService: LocalStorageService?
 
     @IBOutlet var collectionView: UICollectionView!
 
@@ -34,6 +33,7 @@ class HomeViewControllerImpl: UIViewController, HomeViewController, UICollection
         let nibCell = UINib(nibName: "CollectionViewCell", bundle: nil)
         collectionView.register(nibCell, forCellWithReuseIdentifier: "cell")
         presenter?.setData()
+        localStorageService?.fetch()
 
         navigationItem.title = "MOVIES"
         let highAverage = UIBarButtonItem(title: "High", style: .plain, target: self, action: #selector(didTapHighAverage))
@@ -45,20 +45,19 @@ class HomeViewControllerImpl: UIViewController, HomeViewController, UICollection
     }
 
     /*
-    @IBAction func didTapHighAverage(_ sender: Any) {
-        print("did tap high")
-        DispatchQueue.main.async {
-            self.presenter?.setDataForHighAverage()
-        }
-    }
+     @IBAction func didTapHighAverage(_ sender: Any) {
+         print("did tap high")
+         DispatchQueue.main.async {
+             self.presenter?.setDataForHighAverage()
+         }
+     }
 
-    @IBAction func didTapLowAverage(_ sender: Any) {
-        DispatchQueue.main.async {
-            self.presenter?.setDataForLowAverage()
-        }
-    }
-
-     */
+     @IBAction func didTapLowAverage(_ sender: Any) {
+         DispatchQueue.main.async {
+             self.presenter?.setDataForLowAverage()
+         }
+     }
+      */
     @objc func didTapHighAverage() {
         dlog(self, "didTapHighAverageButton")
         presenter?.setDataForHighAverage()
@@ -70,14 +69,21 @@ class HomeViewControllerImpl: UIViewController, HomeViewController, UICollection
     }
 
     func update(movies: [MovieResult]) {
-        // self.movies.append(contentsOf: movies)
-
+        self.movies = movies
+        localStorageService?.saveDataOf(movie: movies)
+        localStorageService?.updateDataOffNetwork()
         DispatchQueue.main.async {
-            self.movies = movies
             self.collectionView.reloadData()
-            self.coreData?.saveDataOf(movie: movies)
         }
     }
+
+    /*func updateFromCoreData(movies: [MovieResult]) {
+        localStorageService?.updateDataOffNetwork()
+        DispatchQueue.main.async {
+            dlog(self, "update view with coredata")
+            self.collectionView.reloadData()
+        }
+    }*/
 }
 
 extension HomeViewControllerImpl {
