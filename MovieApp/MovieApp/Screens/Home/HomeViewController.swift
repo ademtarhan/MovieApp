@@ -11,6 +11,7 @@ import UIKit
 protocol HomeViewController: AnyObject {
     var presenter: HomePresenter? { get set }
     var movies: [MovieResult] { get }
+    var detail: DetailsViewController? {get set}
     var localStorageService: LocalStorageService? { get set }
     func update(movies: [MovieResult])
     func showErrorAlert()
@@ -20,6 +21,7 @@ class HomeViewControllerImpl: UIViewController, HomeViewController, UICollection
     var movie: MovieResult?
     var movies = [MovieResult]()
     var presenter: HomePresenter?
+    var detail: DetailsViewController?
     var localStorageService: LocalStorageService?
 
     @IBOutlet var collectionView: UICollectionView!
@@ -44,20 +46,6 @@ class HomeViewControllerImpl: UIViewController, HomeViewController, UICollection
         navigationItem.leftBarButtonItem = highAverage
     }
 
-    /*
-     @IBAction func didTapHighAverage(_ sender: Any) {
-         print("did tap high")
-         DispatchQueue.main.async {
-             self.presenter?.setDataForHighAverage()
-         }
-     }
-
-     @IBAction func didTapLowAverage(_ sender: Any) {
-         DispatchQueue.main.async {
-             self.presenter?.setDataForLowAverage()
-         }
-     }
-      */
     @objc func didTapHighAverage() {
         dlog(self, "didTapHighAverageButton")
         presenter?.setDataForHighAverage()
@@ -76,14 +64,21 @@ class HomeViewControllerImpl: UIViewController, HomeViewController, UICollection
             self.collectionView.reloadData()
         }
     }
+    
+    
+    @IBAction func didTapFavoriteView(_ sender: Any){
+        navigateToHome()
+    }
+    
+    
 
-    /*func updateFromCoreData(movies: [MovieResult]) {
-        localStorageService?.updateDataOffNetwork()
-        DispatchQueue.main.async {
-            dlog(self, "update view with coredata")
-            self.collectionView.reloadData()
-        }
-    }*/
+    /* func updateFromCoreData(movies: [MovieResult]) {
+         localStorageService?.updateDataOffNetwork()
+         DispatchQueue.main.async {
+             dlog(self, "update view with coredata")
+             self.collectionView.reloadData()
+         }
+     } */
 }
 
 extension HomeViewControllerImpl {
@@ -96,6 +91,7 @@ extension HomeViewControllerImpl {
         let itemNumber = NSNumber(value: indexPath.item)
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CollectionViewCell
         let movie = movies[indexPath.row]
+
         cell.setup(itemNumber: itemNumber, movie)
         return cell
     }
@@ -103,6 +99,22 @@ extension HomeViewControllerImpl {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return movies.count
     }
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let detail = DetailsViewControllerImpl(nibName: "DetailsViewController", bundle: nil)
+        movie = movies[indexPath.row]
+        detail.movie = movie
+        navigationController?.pushViewController(detail, animated: true)
+    }
+    
+    func navigateToFavorite() {
+        let favorite = FavoriteViewControllerImpl(nibName: "FavoriteViewController", bundle: nil)
+        //favorite.modalPresentationStyle = .fullScreen
+        navigationController?.popToViewController(favorite, animated: true)
+       // navigationController?.pushViewController(favorite, animated: true)
+    }
+    
+    
 }
 
 extension HomeViewControllerImpl: UICollectionViewDelegateFlowLayout {

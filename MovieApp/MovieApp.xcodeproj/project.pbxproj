@@ -12,6 +12,8 @@
 		9A27741728B4F59E00A18B30 /* LocalStorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A27741628B4F59E00A18B30 /* LocalStorageService.swift */; };
 		9A4CECD028B89880001F2C0B /* MovieEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4CECCE28B89880001F2C0B /* MovieEntity+CoreDataClass.swift */; };
 		9A4CECD128B89880001F2C0B /* MovieEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4CECCF28B89880001F2C0B /* MovieEntity+CoreDataProperties.swift */; };
+		9A4CECDF28B8F9A1001F2C0B /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4CECDD28B8F9A1001F2C0B /* DetailsViewController.swift */; };
+		9A4CECE028B8F9A1001F2C0B /* DetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A4CECDE28B8F9A1001F2C0B /* DetailsViewController.xib */; };
 		9A5074C928B39D1000F61486 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9A5074C828B39D1000F61486 /* GoogleService-Info.plist */; };
 		9A88F4C428AB60B600921E41 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A88F4C328AB60B600921E41 /* AppDelegate.swift */; };
 		9A88F4CD28AB60BA00921E41 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A88F4CC28AB60BA00921E41 /* Assets.xcassets */; };
@@ -36,6 +38,9 @@
 		9A96E05028ACC5D500E46947 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A96E04E28ACC5D500E46947 /* CollectionViewCell.swift */; };
 		9A96E05128ACC5D500E46947 /* CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A96E04F28ACC5D500E46947 /* CollectionViewCell.xib */; };
 		9A96E05928B36ED900E46947 /* Debug+Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A96E05828B36ED900E46947 /* Debug+Log.swift */; };
+		9AB2243428BA93640047ED7F /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AB2243228BA93640047ED7F /* FavoriteViewController.swift */; };
+		9AB2243528BA93640047ED7F /* FavoriteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9AB2243328BA93640047ED7F /* FavoriteViewController.xib */; };
+		9AB2243D28BA975A0047ED7F /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AB2243B28BA975A0047ED7F /* TabBarViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +50,8 @@
 		9A27741628B4F59E00A18B30 /* LocalStorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStorageService.swift; sourceTree = "<group>"; };
 		9A4CECCE28B89880001F2C0B /* MovieEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MovieEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
 		9A4CECCF28B89880001F2C0B /* MovieEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MovieEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		9A4CECDD28B8F9A1001F2C0B /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
+		9A4CECDE28B8F9A1001F2C0B /* DetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailsViewController.xib; sourceTree = "<group>"; };
 		9A5074C828B39D1000F61486 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9A88F4C028AB60B600921E41 /* MovieApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A88F4C328AB60B600921E41 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -71,6 +78,9 @@
 		9A96E04E28ACC5D500E46947 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		9A96E04F28ACC5D500E46947 /* CollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionViewCell.xib; sourceTree = "<group>"; };
 		9A96E05828B36ED900E46947 /* Debug+Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Debug+Log.swift"; sourceTree = "<group>"; };
+		9AB2243228BA93640047ED7F /* FavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
+		9AB2243328BA93640047ED7F /* FavoriteViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavoriteViewController.xib; sourceTree = "<group>"; };
+		9AB2243B28BA975A0047ED7F /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		CA6360ECEED3D0A48268C636 /* Pods_MovieApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MovieApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -110,6 +120,15 @@
 				9A4CECCF28B89880001F2C0B /* MovieEntity+CoreDataProperties.swift */,
 			);
 			path = CoreData;
+			sourceTree = "<group>";
+		};
+		9A4CECDC28B8F980001F2C0B /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				9A4CECDD28B8F9A1001F2C0B /* DetailsViewController.swift */,
+				9A4CECDE28B8F9A1001F2C0B /* DetailsViewController.xib */,
+			);
+			path = Detail;
 			sourceTree = "<group>";
 		};
 		9A88F4B728AB60B600921E41 = {
@@ -161,6 +180,8 @@
 		9A88F4D828AB62DB00921E41 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				9AB2243128BA934C0047ED7F /* Favorite */,
+				9A4CECDC28B8F980001F2C0B /* Detail */,
 				9A88F4EA28AB655500921E41 /* LogIn */,
 				9A88F4D928AB62E500921E41 /* Home */,
 			);
@@ -170,6 +191,7 @@
 		9A88F4D928AB62E500921E41 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				9AB2243628BA956D0047ED7F /* TabBarViewController */,
 				9A96E04D28ACC5AE00E46947 /* CollectionCell */,
 				9A88F4E428AB63D300921E41 /* HomeEntity.swift */,
 				9A88F4E228AB63BC00921E41 /* HomeInteractor.swift */,
@@ -211,6 +233,23 @@
 				9A96E05828B36ED900E46947 /* Debug+Log.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		9AB2243128BA934C0047ED7F /* Favorite */ = {
+			isa = PBXGroup;
+			children = (
+				9AB2243228BA93640047ED7F /* FavoriteViewController.swift */,
+				9AB2243328BA93640047ED7F /* FavoriteViewController.xib */,
+			);
+			path = Favorite;
+			sourceTree = "<group>";
+		};
+		9AB2243628BA956D0047ED7F /* TabBarViewController */ = {
+			isa = PBXGroup;
+			children = (
+				9AB2243B28BA975A0047ED7F /* TabBarViewController.swift */,
+			);
+			path = TabBarViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -280,6 +319,8 @@
 			files = (
 				9A88F4EE28AB65A900921E41 /* LogInViewController.xib in Resources */,
 				9A88F4D028AB60BA00921E41 /* LaunchScreen.storyboard in Resources */,
+				9AB2243528BA93640047ED7F /* FavoriteViewController.xib in Resources */,
+				9A4CECE028B8F9A1001F2C0B /* DetailsViewController.xib in Resources */,
 				9A96E05128ACC5D500E46947 /* CollectionViewCell.xib in Resources */,
 				9A88F4CD28AB60BA00921E41 /* Assets.xcassets in Resources */,
 				9A88F4DF28AB638000921E41 /* HomeViewController.xib in Resources */,
@@ -358,6 +399,7 @@
 			files = (
 				9A88F4F828AB661500921E41 /* LogInEntity.swift in Sources */,
 				9A4CECD128B89880001F2C0B /* MovieEntity+CoreDataProperties.swift in Sources */,
+				9A4CECDF28B8F9A1001F2C0B /* DetailsViewController.swift in Sources */,
 				9A88F4C428AB60B600921E41 /* AppDelegate.swift in Sources */,
 				9A96E05028ACC5D500E46947 /* CollectionViewCell.swift in Sources */,
 				9A88F4E528AB63D300921E41 /* HomeEntity.swift in Sources */,
@@ -368,6 +410,7 @@
 				9A96E04C28ACBB0800E46947 /* APICallable.swift in Sources */,
 				9A88F4E928AB646700921E41 /* FirebaseService.swift in Sources */,
 				9A88F4F228AB65CF00921E41 /* LogInInteractor.swift in Sources */,
+				9AB2243D28BA975A0047ED7F /* TabBarViewController.swift in Sources */,
 				9A96E05928B36ED900E46947 /* Debug+Log.swift in Sources */,
 				9A88F4DB28AB62F900921E41 /* HomeRouter.swift in Sources */,
 				9A88F4FA28AB662000921E41 /* HomeService.swift in Sources */,
@@ -377,6 +420,7 @@
 				9A88F4E728AB645A00921E41 /* ApiService.swift in Sources */,
 				9A88F4E128AB63B000921E41 /* HomePresenter.swift in Sources */,
 				9A4CECD028B89880001F2C0B /* MovieEntity+CoreDataClass.swift in Sources */,
+				9AB2243428BA93640047ED7F /* FavoriteViewController.swift in Sources */,
 				9A88F4F428AB65F700921E41 /* LogInService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

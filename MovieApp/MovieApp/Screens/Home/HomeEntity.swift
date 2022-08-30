@@ -48,11 +48,12 @@ struct MovieResult: Codable {
     // let genreIDS: [Int]
     // let id: Int
 //    let originalLanguage: ISO639_1
-//    let originalTitle, overview: String
+//    let originalTitle,
+    let overview: String
 //    let popularity: Double
-    // let releaseDate: String
+    let releaseDate: String
     let posterPath, title: String
-    // let video: Bool
+    // let video: Bool"\(imageBaseURL)\(movie.posterPath)"
     let voteAverage: Double
     // let voteCount: Int
 
@@ -64,8 +65,9 @@ struct MovieResult: Codable {
 //        case originalLanguage = "original_language"
 //        case originalTitle = "original_title"
 //        case overview, popularity
+        case overview
         case posterPath = "poster_path"
-        // case releaseDate = "release_date"
+        case releaseDate = "release_date"
         case title
         // case video
         case voteAverage = "vote_average"

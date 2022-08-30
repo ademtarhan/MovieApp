@@ -52,8 +52,8 @@ class LocalStorageServiceImpl: NSManagedObject, LocalStorageService {
                 movieEntity.image = movie.posterPath
                 movieEntity.name = movie.title
                 movieEntity.voteAverage = movie.voteAverage
-                let item = MovieResult(posterPath: movieEntity.image!, title: movieEntity.name!, voteAverage: movieEntity.voteAverage)
-                self.movieArray.append(item)
+                //let item = MovieResult(posterPath: movieEntity.image!, title: movieEntity.name!, voteAverage: movieEntity.voteAverage)
+                //self.movieArray.append(item)
                 
             }
             dlog(self, "didSaveDataFromCoreData")
