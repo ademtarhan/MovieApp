@@ -8,10 +8,10 @@
 import CoreData
 import FirebaseCore
 import UIKit
+
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
-
     var rootViewController: UIViewController? {
         get { window?.rootViewController }
         set {
@@ -48,7 +48,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let container = NSPersistentContainer(name: "MovieModel")
         container.loadPersistentStores(completionHandler: { _, error in
             if let error = error as NSError? {
-       
                 fatalError("Unresolved error \(error), \(error.userInfo)")
             }
         })

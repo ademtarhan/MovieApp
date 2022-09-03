@@ -24,9 +24,11 @@ class HomeServiceImpl: HomeService, APICallable {
             completion(.failure(MovieError.invalidURL(endPoint)))
             return
         }
+        
 
         URLSession.shared.dataTask(with: endpointURL) { data, _, error in
             guard error == nil else {
+                fatalError("\(error)")
                 dlog(self, "data error")
                 completion(.failure(MovieError.forwarded(error!)))
 
@@ -34,6 +36,7 @@ class HomeServiceImpl: HomeService, APICallable {
             }
 
             guard data != nil else {
+                fatalError("endpointURL error")
                 dlog(self, "endpointURL error")
                 completion(.failure(MovieError.invalidPayload(endpointURL)))
                 return
@@ -44,6 +47,7 @@ class HomeServiceImpl: HomeService, APICallable {
 
                 completion(.success(results))
             } catch {
+                fatalError("forwarded error")
                 dlog(self, "forwarded error")
                 completion(.failure(MovieError.forwarded(error)))
             }

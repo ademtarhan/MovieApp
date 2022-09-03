@@ -9,7 +9,7 @@ import UIKit
 
 protocol DetailsViewController: AnyObject {
     var favorite: FavoriteViewController? {get set}
-    
+    var favoriMovies : [MovieResult] { get set }
     var movie: MovieResult? { get set }
 }
 
@@ -17,6 +17,7 @@ class DetailsViewControllerImpl: UIViewController, DetailsViewController, APICal
     var favorite: FavoriteViewController?
     
     var movie: MovieResult?
+    var favoriMovies = [MovieResult]()
    
     
     @IBOutlet var movieImage: UIImageView!
@@ -42,7 +43,9 @@ class DetailsViewControllerImpl: UIViewController, DetailsViewController, APICal
 
     @objc func addToFavorite() {
         favorite?.favoriteMovies.append(self.movie!)
+        favoriMovies.append(movie!)
         dlog(self, "\(favorite?.favoriteMovies.count)")
+        dlog(self, "\(favoriMovies.count)")
     }
 
     func loadImage(url: URL) {

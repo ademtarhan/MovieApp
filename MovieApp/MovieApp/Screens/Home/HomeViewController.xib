@@ -3,7 +3,6 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
-        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -20,7 +19,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="hm9-7R-Tb8">
-                    <rect key="frame" x="5" y="44" width="404" height="774"/>
+                    <rect key="frame" x="5" y="44" width="404" height="818"/>
                     <color key="backgroundColor" red="0.97254901959999995" green="0.96862745100000003" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="nji-cR-nU3">
                         <size key="itemSize" width="128" height="128"/>
@@ -39,79 +38,45 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <tabBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yra-SE-0ab">
-                    <rect key="frame" x="0.0" y="818" width="414" height="60"/>
+                <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5EI-cJ-ZEx">
+                    <rect key="frame" x="324" y="732" width="70" height="70"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="60" id="cd2-LI-75M"/>
-                    </constraints>
-                    <items/>
-                </tabBar>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yxI-EN-eiG">
-                    <rect key="frame" x="20" y="818" width="165" height="44"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="44" id="Viy-QX-Ku3"/>
-                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="XtE-M6-K3p"/>
-                        <constraint firstAttribute="width" constant="165" id="g6p-7Y-2IQ"/>
+                        <constraint firstAttribute="height" constant="70" id="1mj-R0-T7v"/>
+                        <constraint firstAttribute="width" constant="70" id="cq2-aI-ojP"/>
                     </constraints>
                     <state key="normal" title="Button"/>
-                    <buttonConfiguration key="configuration" style="plain">
-                        <attributedString key="attributedTitle">
-                            <fragment content="Home">
-                                <attributes>
-                                    <font key="NSFont" size="24" name="HoeflerText-Regular"/>
-                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                </attributes>
-                            </fragment>
-                        </attributedString>
-                        <color key="baseForegroundColor" name="foreGroundColor"/>
-                    </buttonConfiguration>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bWl-t1-HrH">
-                    <rect key="frame" x="229" y="818" width="165" height="44"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="44" id="8vb-EZ-niu"/>
-                        <constraint firstAttribute="width" constant="165" id="e66-Ne-fCk"/>
-                    </constraints>
-                    <state key="normal" title="Button"/>
-                    <buttonConfiguration key="configuration" style="plain">
-                        <attributedString key="attributedTitle">
-                            <fragment content="Favorite">
-                                <attributes>
-                                    <font key="NSFont" size="24" name="HoeflerText-Regular"/>
-                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                </attributes>
-                            </fragment>
-                        </attributedString>
-                        <color key="baseForegroundColor" name="foreGroundColor"/>
-                    </buttonConfiguration>
+                    <buttonConfiguration key="configuration" style="plain"/>
                     <connections>
-                        <action selector="didTapFavoriteView:" destination="-1" eventType="touchUpInside" id="tEc-yK-mRY"/>
+                        <action selector="didTapFavoriteView:" destination="-1" eventType="touchUpInside" id="DPR-Jj-QUu"/>
                     </connections>
                 </button>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="moM-8g-AKK">
+                    <rect key="frame" x="334" y="741.5" width="60" height="60"/>
+                    <color key="tintColor" red="0.98039215690000003" green="0.97254901959999995" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="60" id="4EY-3R-Ge8"/>
+                        <constraint firstAttribute="width" constant="60" id="KpU-9s-Xif"/>
+                    </constraints>
+                </imageView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" red="0.97254901959999995" green="0.96862745100000003" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="P9V-Kq-XTp" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="5" id="19O-sN-vZg"/>
-                <constraint firstItem="yra-SE-0ab" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="483-sT-ay9"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="yra-SE-0ab" secondAttribute="trailing" id="7Y5-UV-rRe"/>
-                <constraint firstItem="yxI-EN-eiG" firstAttribute="top" secondItem="hm9-7R-Tb8" secondAttribute="bottom" id="8JJ-1q-juz"/>
-                <constraint firstAttribute="bottom" secondItem="yra-SE-0ab" secondAttribute="bottom" constant="18" id="OZr-d1-ury"/>
-                <constraint firstAttribute="bottom" secondItem="hm9-7R-Tb8" secondAttribute="bottom" constant="78" id="Qdz-HE-YV4"/>
-                <constraint firstItem="yxI-EN-eiG" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="WMY-rI-Z3m"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="hm9-7R-Tb8" secondAttribute="trailing" constant="5" id="X9N-VC-CVu"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="hm9-7R-Tb8" secondAttribute="trailing" constant="5" id="8tu-Po-OtE"/>
+                <constraint firstAttribute="trailing" secondItem="moM-8g-AKK" secondAttribute="trailing" constant="20" id="N8X-b8-Uag"/>
+                <constraint firstItem="hm9-7R-Tb8" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="OQx-6P-60W"/>
+                <constraint firstItem="hm9-7R-Tb8" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="5" id="WZf-WJ-AMh"/>
                 <constraint firstItem="P9V-Kq-XTp" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="cAF-76-idE"/>
-                <constraint firstItem="bWl-t1-HrH" firstAttribute="top" secondItem="hm9-7R-Tb8" secondAttribute="bottom" id="eB2-np-ypV"/>
-                <constraint firstItem="hm9-7R-Tb8" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="5" id="oJi-7d-xpT"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="bWl-t1-HrH" secondAttribute="trailing" constant="20" id="xkk-Sh-iJ6"/>
-                <constraint firstItem="hm9-7R-Tb8" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="zlA-FM-c4W"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="moM-8g-AKK" secondAttribute="bottom" constant="60" id="exK-Sa-OCJ"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="5EI-cJ-ZEx" secondAttribute="bottom" constant="60" id="kVU-xI-ebX"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="5EI-cJ-ZEx" secondAttribute="trailing" constant="20" id="kob-H5-6oT"/>
+                <constraint firstItem="hm9-7R-Tb8" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="t4l-ss-gwl"/>
             </constraints>
             <point key="canvasLocation" x="137.68115942028987" y="83.705357142857139"/>
         </view>
     </objects>
     <resources>
-        <namedColor name="foreGroundColor">
-            <color red="0.14900000393390656" green="0.13699999451637268" blue="0.13300000131130219" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
+        <image name="star.fill" catalog="system" width="128" height="116"/>
     </resources>
 </document>

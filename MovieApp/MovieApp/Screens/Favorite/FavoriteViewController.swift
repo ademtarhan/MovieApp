@@ -9,29 +9,60 @@ import UIKit
 
 
 protocol FavoriteViewController: AnyObject{
+    var detail : DetailsViewController? {get set}
     var favoriteMovies : [MovieResult] {get set}
 }
 
 
-class FavoriteViewControllerImpl: UIViewController {
+class FavoriteViewControllerImpl: UIViewController, FavoriteViewController, UICollectionViewDataSource {
+    var detail: DetailsViewController?
     
+    @IBOutlet weak var collectionView: UICollectionView!
     var favoriteMovies = [MovieResult]()
-
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        navigationItem.title = "Favorite"
+        detail = DetailsViewControllerImpl()
+        favoriteMovies = detail!.favoriMovies
+        dlog(self, "favorite : \(favoriteMovies)")
+        
+        
+        
+        
     }
+    
+    
 
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
+
+
+extension FavoriteViewControllerImpl{
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let itemNumber = NSNumber(value: indexPath.item)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CollectionViewCell
+        let movie = favoriteMovies[indexPath.row]
+
+        cell.setup(itemNumber: itemNumber, movie)
+        return cell
+    }
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return favoriteMovies.count
+    }
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let detail = DetailsViewControllerImpl(nibName: "DetailsViewController", bundle: nil)
+        let movie = favoriteMovies[indexPath.row]
+        detail.movie = movie
+        navigationController?.pushViewController(detail, animated: true)
+    }
+}
+
+extension FavoriteViewControllerImpl: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: (view.frame.width - 20) / 2, height: view.frame.height / 3)
+    }
+}
+

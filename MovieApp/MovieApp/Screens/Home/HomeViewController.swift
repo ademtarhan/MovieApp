@@ -67,7 +67,8 @@ class HomeViewControllerImpl: UIViewController, HomeViewController, UICollection
     
     
     @IBAction func didTapFavoriteView(_ sender: Any){
-        navigateToHome()
+        let favoriteVC = FavoriteViewControllerImpl(nibName: "FavoriteViewController", bundle: nil)
+        navigationController?.pushViewController(favoriteVC, animated: true)
     }
     
     
